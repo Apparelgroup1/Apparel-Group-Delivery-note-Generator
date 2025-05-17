@@ -1,0 +1,51 @@
+Yes, you can insert images into the generated delivery note table or header by adding `<img>` tags with appropriate `src` and `alt` attributes in the HTML content.
+
+For example, to insert a logo image in the delivery note header inside the generated HTML, you can modify the code that builds the HTML string to include an `<img>` tag.
+
+---
+
+### How to insert an image in the delivery note header:
+
+In the JavaScript where the delivery note HTML is generated (inside the form submit handler), update the header section like this:
+
+```js
+let html = `<div class="bg-white shadow rounded p-6">
+  <h2 class="text-2xl font-bold mb-6 text-indigo-900 border-b border-indigo-300 pb-2 flex items-center space-x-4">
+    <img src="https://your-image-url.com/logo.png" alt="Company Logo" class="h-12 object-contain" />
+    <span>Delivery Note</span>
+  </h2>
+  ...
+</div>`;
+```
+
+Replace `"https://your-image-url.com/logo.png"` with your actual image URL.
+
+---
+
+### Example with Apparel Group logo:
+
+```js
+let html = `<div class="bg-white shadow rounded p-6">
+  <h2 class="text-2xl font-bold mb-6 text-indigo-900 border-b border-indigo-300 pb-2 flex items-center space-x-4">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Apparel_Group_logo.svg/2560px-Apparel_Group_logo.svg.png" alt="Apparel Group Logo" class="h-12 object-contain" />
+    <span>Delivery Note</span>
+  </h2>
+  ...
+</div>`;
+```
+
+---
+
+### To insert images inside table cells:
+
+You can add `<img>` tags inside the `<td>` elements similarly, for example:
+
+```js
+html += `<td class="border ... px-3 py-2">
+  <img src="https://example.com/product-image.jpg" alt="Product Image" class="h-10 mx-auto" />
+</td>`;
+```
+
+---
+
+If you want, I can help you update your full code to include images in the header or table cells. Just let me know!
